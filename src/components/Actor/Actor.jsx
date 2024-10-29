@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 const Actor = ({ actorData }) => {
   const { author, image, category } = actorData;
   return (
-    <div>
+    <div className="pt-10">
       <div className="border border-slate-200 p-4 rounded-xl ">
         <figure>
           <img

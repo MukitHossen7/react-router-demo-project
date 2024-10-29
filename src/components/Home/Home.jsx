@@ -3,8 +3,9 @@ import Headers from "../Headers/Headers";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Headers></Headers>
+
       <Outlet></Outlet>
     </div>
   );
