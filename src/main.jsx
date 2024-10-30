@@ -10,6 +10,7 @@ import Actors from "./components/Actors/Actors";
 import Blogs from "./components/Bolgs/Blogs";
 import Homes from "./components/Homes/Homes";
 import PetsDetails from "./components/PetsDetails/PetsDetails";
+import ActorsDetails from "./components/ActorsDetails/ActorsDetails";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,14 @@ const router = createBrowserRouter([
         loader: () =>
           fetch("https://openapi.programming-hero.com/api/retro-forum/posts"),
         element: <Actors></Actors>,
+      },
+      {
+        path: "/actorsDetails/:actorId",
+        loader: ({ params }) =>
+          fetch(
+            `https://openapi.programming-hero.com/api/retro-forum/post/${params.actorId}`
+          ),
+        element: <ActorsDetails></ActorsDetails>,
       },
       {
         path: "/blogs",

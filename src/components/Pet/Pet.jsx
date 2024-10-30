@@ -9,7 +9,7 @@ const Pet = ({ petData }) => {
   };
 
   return (
-    <div className="pt-10">
+    <div className="">
       <div className="card border border-slate-200 p-4 space-y-3">
         <figure>
           <img

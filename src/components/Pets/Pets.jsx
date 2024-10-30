@@ -10,7 +10,7 @@ const Pets = () => {
       <h3 className="text-2xl font-bold text-center">
         Pets : {petsData.length}{" "}
       </h3>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4 pt-10">
         {petsData.map((petData) => (
           <Pet key={petData.petId} petData={petData}></Pet>
         ))}
