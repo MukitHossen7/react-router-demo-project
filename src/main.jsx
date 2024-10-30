@@ -12,10 +12,12 @@ import Homes from "./components/Homes/Homes";
 import PetsDetails from "./components/PetsDetails/PetsDetails";
 import ActorsDetails from "./components/ActorsDetails/ActorsDetails";
 import BlogDetails from "./components/BlogDetails/BlogDetails";
+import Error from "./components/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <Error></Error>,
     element: <Home></Home>,
     children: [
       {
