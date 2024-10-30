@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 const Pet = ({ petData }) => {
-  const { pet_name, breed, image, price } = petData;
+  const { petId, pet_name, breed, image, price } = petData;
+
+  const navigate = useNavigate();
+  const handlePetsDetails = () => {
+    navigate(`/petsDetails/${petId}`);
+  };
+
   return (
     <div className="pt-10">
       <div className="card border border-slate-200 p-4 space-y-3">
@@ -16,7 +23,10 @@ const Pet = ({ petData }) => {
           <p>Breed: {breed || "N/A"}</p>
           <p>Price : {price}</p>
 
-          <button className="btn btn-primary mt-4 font-bold">
+          <button
+            onClick={handlePetsDetails}
+            className="btn btn-primary mt-4 font-bold"
+          >
             Pets Details
           </button>
         </div>

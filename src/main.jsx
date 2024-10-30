@@ -9,6 +9,7 @@ import Pets from "./components/Pets/Pets";
 import Actors from "./components/Actors/Actors";
 import Blogs from "./components/Bolgs/Blogs";
 import Homes from "./components/Homes/Homes";
+import PetsDetails from "./components/PetsDetails/PetsDetails";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,15 @@ const router = createBrowserRouter([
         loader: () =>
           fetch("https://openapi.programming-hero.com/api/peddy/pets"),
         element: <Pets></Pets>,
+      },
+      {
+        path: "/petsDetails/:petId",
+        loader: ({ params }) =>
+          fetch(
+            `https://openapi.programming-hero.com/api/peddy/pet/${params.petId}`
+          ),
+
+        element: <PetsDetails></PetsDetails>,
       },
       {
         path: "/actors",
