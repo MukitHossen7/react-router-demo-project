@@ -1,11 +1,12 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import Headers from "../Headers/Headers";
 import { Bars } from "react-loader-spinner";
+import Footer from "../Footer/Footer";
 const Home = () => {
   const navigation = useNavigation();
 
   return (
-    <div className="">
+    <div className="h-screen">
       <Headers></Headers>
       {navigation.state === "loading" ? (
         <div className="flex justify-center items-center h-screen">
@@ -22,6 +23,7 @@ const Home = () => {
       ) : (
         <Outlet></Outlet>
       )}
+      <Footer></Footer>
     </div>
   );
 };
